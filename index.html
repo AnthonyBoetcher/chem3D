@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chem.</title>
+    <link rel="icon" type="image/x-icon" href="yy.png">
+    <script src="jmol/jmol-16.1.47/jsmol/jsmol/JSmol.min.js"></script>
+    <script src="jmol/jmol-16.1.47/jsmol/jsmol/js/Jmol2.js"></script>
+    <script>
+        jmolInitialize("/jmol/jsmol");
+
+
+
+        let contentLoaded = false;
+
+        // Function to load additional content
+        function loadAdditionalContent() {
+            // Add your code to load content here
+            console.log("Content loaded!");
+            contentLoaded = true;
+        }
+
+        // Event listener for scroll
+        window.addEventListener("scroll", function () {
+            // Specify the scroll position to trigger the content load
+            const scrollTriggerPosition = 500;
+
+            // Check if the scroll position is past the trigger point and content has not been loaded
+            if (window.scrollY > scrollTriggerPosition && !contentLoaded) {
+                loadAdditionalContent();
+            }
+        });
+
+        // Add event listener for keydown event on the input field
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                // Call the search function when Enter key is pressed
+                searchDocument();
+            }
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <h2 style="text-align: center;">3D chemistry archive - thanks to openSource JSmol and chemapps.stolaf.edu</h2>
+
+    <table border=2 cellpadding=10>
+        <tr>
+            <td colspan="3">
+                <h2>Biochemicals</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width:450px;height:450px">Serotonin
+                    <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=serotonin&inline=1&isfirst=false&width=450&height=450"></script>
+                </div>
+            </td>
+            <td>
+                <div style="width:450px;height:450px">Dopamine
+                    <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=dopamine&inline=1&isfirst=false&width=450&height=450"></script>
+                </div>
+            </td>
+            <td>
+                <div style="width:450px;height:450px">Acetylcholine
+                    <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=acetylcholine&inline=1&isfirst=false&width=450&height=450"></script>
+                </div>
+            </td>
+        </tr>
+        
+     <tr>
+        <td>
+          <div style="width:450px;height:450px">Gamma-Aminobutyric Acid (GABA)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=gamma-aminobutyric+acid&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Adrenaline (Epinephrine)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=adrenaline&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Norepinephrine
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=norepinephrine&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3"><h2>Human Biological Chemicals and Neurotransmitters</h2></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Oxytocin
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=oxytocin&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+            <div style="width:450px;height:450px">Anandamide
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=anandamide&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+        <td>
+          <div style="width:450px;height:450px">Melatonin
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=melatonin&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Histamine
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=histamine&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Glutamate
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=glutamate&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+            <div style="width:450px;height:450px">Neuropeptide Y
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=neuropeptide+y&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Cortisol
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=cortisol&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Insulin
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=insulin&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Thyroxine (T4)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=thyroxine&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+     
+    <tr>
+        <td colspan="3"><h2>Synthetic Polymers</h2></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Polyethylene
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polyethylene&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Polypropylene
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polypropylene&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Polyvinyl Chloride (PVC)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=pvc&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Polyethylene Terephthalate (PET)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=pet&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Polystyrene
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polystyrene&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Polytetrafluoroethylene (PTFE)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ptfe&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+    
+      <tr>
+        <td colspan="3"><h2>Natural Polymers</h2></td>
+      </tr>
+      <tr>
+        <td>
+            <div style="width:450px;height:450px">Chitosan
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=chitosan&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+        <td>
+          <div style="width:450px;height:450px">Starch
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=starch&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Chitin
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=chitin&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3"><h2>Synthetic Rubbers</h2></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Styrene Butadiene Rubber (SBR)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=sbr&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Polybutadiene (BR)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polybutadiene&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+            <div style="width:450px;height:450px">Polyurethane (PU)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polyurethane&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Polychloroprene (Neoprene)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polychloroprene&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Silicon
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=silicon&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+            <div style="width:450px;height:450px">Polybutadiene
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=Polybutadiene&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+      </tr>
+      <tr>
+        <td colspan="3"><h2>Oxide Ceramics</h2></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Alumina (Al2O3)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=alumina&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Zirconia (ZrO2)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=zirconia&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+          <div style="width:450px;height:450px">Magnesia (MgO)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=magnesia&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+      </tr>
+  
+      <tr>
+        <td colspan="3"><h2>Refractory Ceramics</h2></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="width:450px;height:450px">Mullite (3Al2O3·2SiO2)
+            <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=mullite&inline=1&isfirst=false&width=450&height=450"></script>
+          </div>
+        </td>
+        <td>
+            <div style="width:450px;height:450px">Titanium Dioxide (TiO2)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=titanium+dioxide&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+          
+          
+          <td>
+            <div style="width:450px;height:450px">Chromia (Cr2O3)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=chromia&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+    </tr>
+    <tr>
+
+      <tr>
+          <td colspan="3"><h2>Biodegradable Polymers</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width:450px;height:450px">Polylactic Acid (PLA)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polylactic+acid&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+          <td>
+            <div style="width:450px;height:450px">Polyglycolic Acid (PGA)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polyglycolic+acid&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+          <td>
+            <div style="width:450px;height:450px">Polycaprolactone (PCL)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=polycaprolactone&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <td colspan="3"><h2>Compound Semiconductors</h2></td>
+        </tr>
+        <tr>
+          <td>
+            <div style="width:450px;height:450px">Gallium Arsenide (GaAs)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=gallium+arsenide&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+          <td>
+            <div style="width:450px;height:450px">Indium Phosphide (InP)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=indium+phosphide&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+          <td>
+            <div style="width:450px;height:450px">Cadmium Telluride (CdTe)
+              <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=cadmium+telluride&inline=1&isfirst=false&width=450&height=450"></script>
+            </div>
+          </td>
+        </tr>
+    
+    <tr>
+      <td colspan="3"><h2>Alcohols</h2></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Methanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=methanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Ethanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ethanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Propanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=propanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Butanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=butanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Pentanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=pentanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Hexanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=hexanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Octanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=octanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Decanol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=decanol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Benzyl Alcohol
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=benzylalcohol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><h2>Ketones</h2></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Acetone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=acetone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Butanone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=butanone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Methyl Ethyl Ketone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=methylethylketone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Cyclohexanone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=cyclohexanone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Acetophenone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=acetophenone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Methyl Isobutyl Ketone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=methylisobutylketone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Camphor
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=camphor&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Diethyl Ketone
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=diethylketone&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Mesityl Oxide
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=mesityloxide&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"><h2>Esters</h2></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Ethyl Acetate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ethylacetate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Methyl Butanoate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=methylbutanoate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Isopropyl Propionate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=isopropylpropionate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Butyl Acetate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=butylacetate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Ethyl Butyrate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ethylbutyrate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Methyl Propionate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=methylpropionate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Isoamyl Acetate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=isoamylacetate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Propyl Butyrate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=propylbutyrate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Hexyl Acetate
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=hexylacetate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3"><h2>Common Cleaning Chemical Compounds</h2></td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Sodium Hypochlorite (Bleach)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=sodium+hypochlorite&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Ammonium Hydroxide (Ammonia-based Cleaner)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ammonium+hydroxide&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Sodium Bicarbonate (Baking Soda, Deodorizer)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=sodium+bicarbonate&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="width:450px;height:450px">Citric Acid (Limescale Remover)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=citric+acid&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Isopropyl Alcohol (Rubbing Alcohol)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=isopropyl+alcohol&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+      <td>
+        <div style="width:450px;height:450px">Hydrogen Peroxide (Disinfectant)
+          <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=hydrogen+peroxide&inline=1&isfirst=false&width=450&height=450"></script>
+        </div>
+      </td>
+    </tr>
+<tr>
+      <td colspan="3"><h2>Pharmaceuticals etc</h2></td>
+    </tr>
+<tr>
+  <td><div style="width:450px;height:450px">Caffeine<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=caffeine&inline=1&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Tylenol<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=tylenol&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Morphine<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=morphine&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+</tr>
+<tr>
+  <td><div style="width:450px;height:450px">Penicillin<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=penicillin&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Aspirin<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=aspirin&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Paracetamol<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=paracetamol&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+</tr>
+<tr>
+  <td><div style="width:450px;height:450px">Codeine<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=codeine&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Ritalin<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=ritalin&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Methamphetamine<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=Methamphetamine&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+</tr>
+<tr>
+  <td><div style="width:450px;height:450px">Cocaine<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=cocaine&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Tetrahydrocannabinol<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=Tetrahydrocannabinol&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+  <td><div style="width:450px;height:450px">Cannabinol<script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=cannabinol&inline=1&isfirst=false&width=450&height=450"></script></div></td>
+</tr>
+    </table>
+</body>
+
+<style>
+    .search-container input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        width: 200px; /* Adjust width as needed */
+    }
+
+    .search-container button {
+        padding: 6px 10px;
+        margin-top: 8px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .search-container button:hover {
+        background: #ccc;
+    }
+
+    body {
+        background-image: url('44.png');
+        background-color: rgba(0, 255, 242, 0.096);
+    }
+
+    table,
+    th,
+    td {
+        border: 30px solid transparent;
+        border-collapse: collapse;
+        padding: 25px;
+        text-align: center;
+        font-size: 1.4em;
+        text-decoration: bold;
+    }
+</style>
+
+
+</html>
