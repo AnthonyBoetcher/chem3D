@@ -2,53 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Chem.</title>
-    <link rel="icon" type="image/x-icon" href="yy.png">
-    <script src="JSmol.min.js"></script><!--jmol/jmol-16.1.47/jsmol/jsmol/JSmol.min.js-->
-    <script src="Jmol2.js"></script><!--jmol/jmol-16.1.47/jsmol/jsmol/js/Jmol2.js-->
-    <script>
-        jmolInitialize("/jmol/jsmol");
+  <meta charset="utf-8">
+  <title>Chem.</title>
+  <link rel="icon" type="image/x-icon" href="yy.png">
+  
+  <script src="JSmol.min.js"></script>
+  <script src="Jmol2.js"></script>
+  <script>
+      jmolInitialize("/jmol/jsmol");
+  // Toggle search input width on icon click
+  function toggleSearch() {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.focus();
+    }
+      let contentLoaded = false;
 
+      function loadAdditionalContent() {
+          console.log("Content loaded!");
+          contentLoaded = true;
+      }
 
+      window.addEventListener("scroll", function () {
+          const scrollTriggerPosition = 500;
+          if (window.scrollY > scrollTriggerPosition && !contentLoaded) {
+              loadAdditionalContent();
+          }
+      });
 
-        let contentLoaded = false;
+      // Search function
+      function searchDocument() {
+          const input = document.getElementById('searchInput');
+          const query = input.value.toLowerCase();
 
-        // Function to load additional content
-        function loadAdditionalContent() {
-            // Add your code to load content here
-            console.log("Content loaded!");
-            contentLoaded = true;
-        }
+          // Loop through table rows
+          const rows = document.querySelectorAll('table tr');
+          for (const row of rows) {
+              // Skip the header row
+              if (row.getElementsByTagName('th').length > 0) {
+                  continue;
+              }
 
-        // Event listener for scroll
-        window.addEventListener("scroll", function () {
-            // Specify the scroll position to trigger the content load
-            const scrollTriggerPosition = 500;
+              // Check if any cell in the row contains the search query
+              let found = false;
+              const cells = row.getElementsByTagName('td');
+              for (const cell of cells) {
+                  if (cell.textContent.toLowerCase().includes(query)) {
+                      found = true;
+                      break;
+                  }
+              }
 
-            // Check if the scroll position is past the trigger point and content has not been loaded
-            if (window.scrollY > scrollTriggerPosition && !contentLoaded) {
-                loadAdditionalContent();
-            }
-        });
+              // Show or hide the row based on the search result
+              row.style.display = found ? '' : 'none';
+          }
+      }
 
-        // Add event listener for keydown event on the input field
-        input.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                // Call the search function when Enter key is pressed
-                searchDocument();
-            }
-        });
-
-    </script>
+      // Add event listener for 'Enter' key press
+      document.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter' && document.activeElement === document.getElementById('searchInput')) {
+              // Call the search function when 'Enter' key is pressed in the input field
+              searchDocument();
+          }
+      });
+  </script>
 
 </head>
 
 <body>
-    <h2 style="text-align: center;">3D chemistry archive - thanks to openSource JSmol and chemapps.stolaf.edu</h2>
+  <header>
+    <div id="searchContainer">
+      <span id="searchIcon" onclick="toggleSearch()">🔍</span>
+      <input type="text" id="searchInput" placeholder="Enter search query">
+      <button onclick="searchDocument()">Search</button>
+    </div>
+  </header>
 
     <table border=2 cellpadding=10>
-        <tr>
+      <h1 style="text-align: center;">3D chemistry archive - thanks to openSource JSmol and chemapps.stolaf.edu.</h1><br>
+      <h2 style="text-align: center;">Click to interact.<br><br>Left click + drag = rotate.<br><br>Double left click on atom = starts distance or angle measuring tool.<br><br>Mouse wheel = zoom.<br><br>Right click = select other properties/visualizations</h2>
+      <tr>
             <td colspan="3">
                 <h2>Biochemicals</h2>
             </td>
@@ -553,26 +585,7 @@
 </body>
 
 <style>
-    .search-container input[type=text] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-        border: none;
-        width: 200px; /* Adjust width as needed */
-    }
 
-    .search-container button {
-        padding: 6px 10px;
-        margin-top: 8px;
-        background: #ddd;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .search-container button:hover {
-        background: #ccc;
-    }
 
     body {
         background-image: url('44.png');
@@ -588,7 +601,74 @@
         text-align: center;
         font-size: 1.4em;
         text-decoration: bold;
+        z-index:1;
+          margin-top: 60px; 
     }
+  script tr div tbody{
+    z-index:1;
+  }
+     
+      #searchInput {
+            width: 100%;
+            z-index: 1001;
+        }
+
+      #searchContainer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          z-index: 1001; /* Adjusted z-index */
+      }
+      body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 20%;
+      background-color: none;
+      padding: 10px;
+      transition: all 0.3s;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    #searchContainer {
+      display: flex;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    #searchInput {
+      flex-grow: 0;
+      width: 0;
+      overflow: hidden;
+      border: none;
+      padding: 5px;
+      transition: width 0.3s;
+    }
+
+    #searchInput:focus {
+      width: 200px;
+    }
+
+    #searchIcon {
+      cursor: pointer;
+      padding: 5px;
+      margin-right: 5px;
+    }
+
+    button {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  </style>
+      
 </style>
 
 
